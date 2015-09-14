@@ -1,0 +1,13 @@
+#previous-photo {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+#lightbox {
+
+	display: inline-block;
+}
+
+#next-photo {
+	display: inline-block;
+}
