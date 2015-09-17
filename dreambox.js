@@ -35,12 +35,15 @@ function renderPhoto() {
 	updateNav();
 	var photo = photos[current_photo];
     var photo_url = photo.images.standard_resolution.url;
+    var photo_title = photo.caption.text;
     var lightbox = document.getElementById('lightbox');
+    var title = document.getElementById('title');
     var lightbox_img = document.getElementById('lightbox-img');
     if (lightbox_img && lightbox_img.classList.contains("fadein")){
     	document.getElementById("lightbox-img").remove();
     }
     lightbox.innerHTML = '<img id="lightbox-img" src="' + photo_url + '" />';
+    title.innerHTML = photo_title;
     var lightbox_img = document.getElementById('lightbox-img');
     lightbox_img.setAttribute('class', 'fadein');
 }

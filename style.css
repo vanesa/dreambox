@@ -1,15 +1,27 @@
-a {
-	vertical-align: top;
+#container {
+	margin: auto;
+	width: 738px;
 }
 
 /* Navigation */
 
-#previous-photo {
+#buttons {
 	display: inline-block;
+	width: 30px;
+	height: 100px;
+	line-height: 100px;
+	background-color: #eeeeee;
+	vertical-align: top;
+	margin-top: 20%;
+	padding: 7px;
+	text-align: center;
+}
+
+#previous-photo {
+	line-height: 90px;
 }
 
 #next-photo {
-	display: inline-block;
 }
 
 /* Lightbox */
@@ -18,6 +30,13 @@ a {
 	display: inline-block;
 }
 
+#title {
+	background-color: #000000;
+	color: #ffffff;
+	width: 640px;
+	margin: auto;
+	padding: 7px;
+}
 /* Fade in effect */
 
 .fadein {
