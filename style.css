@@ -1,6 +1,6 @@
 #container {
 	margin: auto;
-	width: 738px;
+	width: 652px;
 }
 
 /* Navigation */
@@ -18,13 +18,18 @@
 }
 
 #previous-photo {
-	line-height: 90px;
 }
 
 #next-photo {
 }
 
 /* Lightbox */
+
+img {
+	border: 2px dotted #888888;
+	width: 550px;
+	height: auto;
+}
 
 #lightbox {
 	display: inline-block;
@@ -33,7 +38,7 @@
 #title {
 	background-color: #000000;
 	color: #ffffff;
-	width: 640px;
+	width: 550px;
 	margin: auto;
 	padding: 7px;
 }
