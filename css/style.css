@@ -1,0 +1,166 @@
+#container {
+	margin: auto;
+	width: 558px;
+	padding: 20px;
+	background-color: #c7e6d8;
+	border: 1px;
+	border-radius: 15px;
+	z-index: -2;
+}
+
+@font-face {
+    font-family: CherrySwash;
+    src: url(../fonts/CherrySwash-Bold.ttf);
+}
+
+@font-face {
+	font-family: MarckScript;
+	src: url(../fonts/MarckScript-Regular.ttf);
+}
+
+#heading {
+	width: 450px;
+	margin: auto;
+	text-align: center;
+}
+
+h1 {
+	color: #ffffff;
+	font-family: CherrySwash;
+	font-size: 55px;
+	margin: 0px;
+	margin-top: -20px;
+}
+
+.rose {
+	color: #d7808b;
+}
+
+/* Navigation */
+
+.button {
+	display: inline-block;
+	width: 25px;
+	height: 100px;
+	position: relative;
+	line-height: 100px;
+	vertical-align: top;
+	margin-top: 20%;
+	padding: 7px;
+	text-align: center;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+.left-button {
+	border: 1px;
+	border-radius: 8px 0px 0px 8px;
+	background-color: #f4ebd4;
+
+}
+
+.right-button {
+	border: 1px;
+	border-radius: 0px 8px 8px 0px;
+	background-color: #f4ebd4;
+}
+
+/* Link the divs of the navigation buttons */ 
+.button a {
+	width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* End link divs */
+
+
+#previous-photo {
+}
+
+#next-photo {
+}
+
+/* End navigation */
+
+/* Lightbox */
+
+
+#lightbox {
+	display: inline-block;
+	-webkit-box-shadow: 0px 0px 18px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0px 18px 0px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 18px 0px rgba(0,0,0,0.75);
+	border: 1px;
+	border-radius: 15px;
+}
+
+img {
+/*	border: 2px dotted #888888;*/
+	width: 450px;
+	height: auto;
+	border: 1px;
+	border-radius: 15px 15px 0px 0px;
+}
+
+#title {
+	background-color: #ffffff;
+	color: #e94076;
+	font-family: MarckScript;
+	font-size: 1.2em;
+	text-align: center;
+	width: 436px;
+	margin: auto;
+	padding: 7px;
+	margin-top: -5px;
+	border: 1px;
+	border-radius: 0px 0px 15px 15px;
+	word-wrap: break-word;
+
+}
+
+/* Fade in effect */
+
+.fadein {
+	animation: fadein 2s;
+    -moz-animation: fadein 2s; /* Firefox */
+    -webkit-animation: fadein 2s; /* Safari and Chrome */
+    -o-animation: fadein 2s; /* Opera */
+}
+
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-moz-keyframes fadein { /* Firefox */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-webkit-keyframes fadein { /* Safari and Chrome */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+@-o-keyframes fadein { /* Opera */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* End lightbox */
