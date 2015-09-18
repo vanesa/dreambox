@@ -2,7 +2,7 @@
 function callbackFunction(json) {
 	console.log(json);
 	window.photos = json.data;
-	window.photos = [photos[0], photos[1], photos[2]];
+	// window.photos = [photos[0], photos[1], photos[2]];
 	window.current_photo = 0;
 	renderPhoto();
 };
@@ -53,7 +53,7 @@ function renderPhoto() {
     }
     lightbox.innerHTML = '<a href="' + photo_link + '" target="_blank"><img id="lightbox-img" src="' + photo_url + '" /></a><div id="photo_title"></div>';
     var title_div = document.getElementById('photo_title');
-    title_div.textContent = photo_title;
+    title_div.textContent = photo_title; // Prevent XSS
     var lightbox_img = document.getElementById('lightbox-img');
     lightbox_img.setAttribute('class', 'fadein');
 }
