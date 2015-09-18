@@ -15,19 +15,27 @@ function updateNav() {
 	var previous_button = document.getElementById('previous-button');
 	var next_button = document.getElementById('next-button');
 	if (current_photo == 0) {
-		previous_button.removeAttribute('href'); 
+		previous_button.removeAttribute('href');
+		var nav_class = document.getElementsByClassName('button left-button')[0];
+		nav_class.className = nav_class.className + " inactive";
 		return false;
 	}
 	else {
 		previous_button.setAttribute('href', '#');
+		var nav_class = document.getElementsByClassName('button left-button')[0];
+		nav_class.className = "button left-button";
 	}
 
 	if (current_photo >= photos.length -1) {
-		next_button.removeAttribute('href'); 
+		next_button.removeAttribute('href');
+		var nav_class = document.getElementsByClassName('button right-button')[0];
+		nav_class.className = nav_class.className + " inactive"; 
 		return false;
 	}
 	else {
 		next_button.setAttribute('href', '#');
+		var nav_class = document.getElementsByClassName('button right-button')[0];
+		nav_class.className = "button right-button";
 	}
 };
 

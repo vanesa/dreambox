@@ -1,9 +1,15 @@
+body {
+	background-image: url("../images/cloudbg.jpg");
+	background-size: cover;
+
+}
+
 #container {
 	margin: auto;
-	width: 558px;
+	width: 560px;
 	padding: 20px;
 	background-color: #c7e6d8;
-	border: 1px;
+	border: 1px solid #9c9c9c;
 	border-radius: 15px;
 	z-index: -2;
 }
@@ -43,27 +49,26 @@ h1 {
 	width: 25px;
 	height: 100px;
 	position: relative;
-	line-height: 100px;
+	line-height: 110px;
 	vertical-align: top;
 	margin-top: 20%;
 	padding: 7px;
 	text-align: center;
 	margin-left: 5px;
 	margin-right: 5px;
+	background-color: #f4ebd4;
 }
 
 .left-button {
-	border: 1px;
+	border: 1px solid #c6a49a;
 	border-radius: 8px 0px 0px 8px;
-	background-color: #f4ebd4;
-
 }
 
 .right-button {
-	border: 1px;
+	border: 1px solid #c6a49a;
 	border-radius: 0px 8px 8px 0px;
-	background-color: #f4ebd4;
 }
+
 
 /* Link the divs of the navigation buttons */ 
 .button a {
@@ -72,21 +77,27 @@ h1 {
     position: absolute;
     left: 0;
     top: 0;
+    font-family: CherrySwash;
+	font-size: 30px;
+	text-decoration: none;
+	color: #d67e89;
 }
 
+.inactive {
+	background-color: rgba(196, 194, 194, 0.4);
+	border-color: rgba(198, 164, 154, 0.4);
+}
+
+.inactive a{
+	/*color: rgba(244, 235, 212, 0.4);*/
+	color: #abaaaa;
+}
 /* End link divs */
-
-
-#previous-photo {
-}
-
-#next-photo {
-}
 
 /* End navigation */
 
-/* Lightbox */
 
+/* Lightbox */
 
 #lightbox {
 	display: inline-block;
@@ -103,6 +114,7 @@ img {
 	height: auto;
 	border: 1px;
 	border-radius: 15px 15px 0px 0px;
+	border-bottom: 1px dotted #9c9c9c;
 }
 
 #title {
