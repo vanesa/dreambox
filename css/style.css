@@ -132,6 +132,7 @@ img {
 	font-size: 1.2em;
 	text-align: center;
 	width: 436px;
+	height: auto!important;
 	margin: auto;
 	padding: 7px;
 	margin-top: -5px;
