@@ -51,7 +51,9 @@ function renderPhoto() {
     if (lightbox_img && lightbox_img.classList.contains("fadein")){
     	document.getElementById("lightbox-img").remove();
     }
-    lightbox.innerHTML = '<a href="' + photo_link + '" target="_blank"><img id="lightbox-img" src="' + photo_url + '" /></a><div id="title">' + photo_title +'</div>';
+    lightbox.innerHTML = '<a href="' + photo_link + '" target="_blank"><img id="lightbox-img" src="' + photo_url + '" /></a><div id="photo_title"></div>';
+    var title_div = document.getElementById('photo_title');
+    title_div.textContent = photo_title;
     var lightbox_img = document.getElementById('lightbox-img');
     lightbox_img.setAttribute('class', 'fadein');
 }
