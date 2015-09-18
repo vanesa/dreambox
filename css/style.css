@@ -126,7 +126,7 @@ img {
 }
 
 #photo_title {
-	background-color: #ffffff;
+	background-color: #fff!important;
 	color: #e94076;
 	font-family: MarckScript;
 	font-size: 1.2em;
