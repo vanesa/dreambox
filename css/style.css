@@ -1,6 +1,6 @@
 body {
 	background-image: url("../images/cloudbg.jpg");
-	background-image: url(../images/cloudbg.jpg);
+	background-image: url(../images/cloudbg.jpg); /* IE */
 	background-size: cover;
 
 }
@@ -97,7 +97,7 @@ h1 {
 }
 
 .inactive a{
-	/*color: rgba(244, 235, 212, 0.4);*/
+
 	color: #abaaaa;
 }
 /* End link divs */
@@ -117,7 +117,6 @@ h1 {
 }
 
 img {
-/*	border: 2px dotted #888888;*/
 	width: 450px;
 	height: auto;
 	border: 1px;
