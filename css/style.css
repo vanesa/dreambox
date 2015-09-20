@@ -124,6 +124,11 @@ img {
 	border-bottom: 1px dotted #9c9c9c;
 }
 
+img.sorry {
+	border-radius: 15px 15px 15px 15px;
+	border-bottom: none;
+}
+
 #photo_title {
 	background-color: #fff!important;
 	color: #e94076;

@@ -1,10 +1,16 @@
 
 function callbackFunction(json) {
 	console.log(json);
-	window.photos = json.data;
-	// window.photos = [photos[0], photos[1], photos[2]];
-	window.current_photo = 0;
-	renderPhoto();
+	if (json.meta.code == 200) {
+		window.photos = json.data;
+		// window.photos = [photos[0], photos[1], photos[2]];
+		window.current_photo = 0;
+		renderPhoto();
+	}
+	else {
+		var lightbox = document.getElementById('lightbox');
+		lightbox.innerHTML = '<img id="lightbox-img" src="images/sorry.png" class="sorry"/>';
+	}
 };
 
 Element.prototype.remove = function() {
