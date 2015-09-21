@@ -124,12 +124,37 @@ img {
 	border-bottom: 1px dotted #9c9c9c;
 }
 
+video {
+	width: 450px;
+	height: auto;
+	border: 1px;
+	border-radius: 15px 15px 0px 0px;
+	border-bottom: 1px dotted #9c9c9c;
+}
+
 img.sorry {
 	border-radius: 15px 15px 15px 15px;
 	border-bottom: none;
 }
 
 #photo_title {
+	background-color: #fff!important;
+	color: #e94076;
+	font-family: MarckScript;
+	font-size: 1.2em;
+	text-align: center;
+	width: 436px;
+	height: auto!important;
+	margin: auto;
+	padding: 7px;
+	margin-top: -5px;
+	border: 1px;
+	border-radius: 0px 0px 15px 15px;
+	word-wrap: break-word;
+
+}
+
+#video_title {
 	background-color: #fff!important;
 	color: #e94076;
 	font-family: MarckScript;

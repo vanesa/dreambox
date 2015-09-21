@@ -48,21 +48,31 @@ function updateNav() {
 function renderPhoto() {
 	updateNav();
 	var photo = photos[current_photo];
-    var photo_url = photo.images.standard_resolution.url;
-    var photo_title = photo.caption.text;
-    var photo_link = photo.link;
-    var lightbox = document.getElementById('lightbox');
-    var title = document.getElementById('title');
+
+	// Remove old fadein class
     var lightbox_img = document.getElementById('lightbox-img');
     if (lightbox_img && lightbox_img.classList.contains("fadein")){
     	document.getElementById("lightbox-img").remove();
     }
-    lightbox.innerHTML = '<a href="' + photo_link + '" target="_blank"><img id="lightbox-img" src="' + photo_url + '" /></a><div id="photo_title"></div>';
+    // Add new photo or video to DOM
+    var lightbox = document.getElementById('lightbox');
+    var link = photo.link;
+    var url = photo.type == "video" ? photo.videos.standard_resolution.url : photo.images.standard_resolution.url;
+	if (photo.type == "video") {
+	    lightbox.innerHTML = '<a href="' + link + '" target="_blank"><video id="lightbox-img" src="' + url + '" controls></video></a><div id="photo_title"></div>';
+	} else {
+	    lightbox.innerHTML = '<a href="' + link + '" target="_blank"><img id="lightbox-img" src="' + url + '" /></a><div id="photo_title"></div>';
+	}
+
+	// Update caption separately using textContent to prevent XSS
     var title_div = document.getElementById('photo_title');
-    title_div.textContent = photo_title; // Prevent XSS
+    var title = photo.caption.text;
+    title_div.textContent = title; 
+
+    // Fadein new photo or video
     var lightbox_img = document.getElementById('lightbox-img');
     lightbox_img.setAttribute('class', 'fadein');
-}
+};
 
 
 document.getElementById('previous-button').onclick = function(){
