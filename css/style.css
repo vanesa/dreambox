@@ -138,7 +138,7 @@ img.sorry {
 }
 
 #photo_title {
-	background-color: #fff!important;
+	background-color: #FFFFFF;
 	color: #e94076;
 	font-family: MarckScript;
 	font-size: 1.2em;
@@ -154,22 +154,6 @@ img.sorry {
 
 }
 
-#video_title {
-	background-color: #fff!important;
-	color: #e94076;
-	font-family: MarckScript;
-	font-size: 1.2em;
-	text-align: center;
-	width: 436px;
-	height: auto!important;
-	margin: auto;
-	padding: 7px;
-	margin-top: -5px;
-	border: 1px;
-	border-radius: 0px 0px 15px 15px;
-	word-wrap: break-word;
-
-}
 
 /* Fade in effect */
 
