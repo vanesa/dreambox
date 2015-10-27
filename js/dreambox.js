@@ -1,7 +1,7 @@
 
 function callbackFunction(json) {
 	console.log(json);
-	if (json.meta.code == 200) {
+	if (json.meta.code == 400) {
 		window.photos = json.data;
 		// window.photos = [photos[0], photos[1], photos[2]];
 		window.current_photo = 0;
@@ -57,14 +57,14 @@ function renderPhoto() {
     // Add new photo or video to DOM
     var lightbox = document.getElementById('lightbox');
     var link = photo.link;
-    var url = photo.type == "video" ? photo.videos.standard_resolution.url : photo.images.standard_resolution.url;
+    var url = photo.type == "video" ? photo.videos.standard_resolution.url : photo.images.standard_resolution.url; // ternary operator
 	if (photo.type == "video") {
 	    lightbox.innerHTML = '<a href="' + link + '" target="_blank"><video id="lightbox-img" src="' + url + '" controls></video></a><div id="photo_title"></div>';
 	} else {
 	    lightbox.innerHTML = '<a href="' + link + '" target="_blank"><img id="lightbox-img" src="' + url + '" /></a><div id="photo_title"></div>';
 	}
 
-	// Update caption separately using textContent to prevent XSS
+	// Update caption separately using textContent to prevent XSS (Cross Site Scripting)
     var title_div = document.getElementById('photo_title');
     var title = photo.caption.text;
     title_div.textContent = title; 
