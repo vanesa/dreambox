@@ -1,7 +1,8 @@
 
 function callbackFunction(json) {
-	console.log(json);
-	if (json.meta.code == 400) {
+	console.log(json.meta.code);
+
+	if (json.meta.code == 200) {
 		window.photos = json.data;
 		// window.photos = [photos[0], photos[1], photos[2]];
 		window.current_photo = 0;
@@ -74,22 +75,31 @@ function renderPhoto() {
     lightbox_img.setAttribute('class', 'fadein');
 };
 
+function prepareButtons() {
+	document.getElementById('previous-button').onclick = function(){
+	    if (window.current_photo == 0) {
+	    	return false;
+	    }
+	    window.current_photo -= 1;
+	    renderPhoto();
+	    return false;
+	};
 
-document.getElementById('previous-button').onclick = function(){
-    if (window.current_photo == 0) {
-    	return false;
-    }
-    window.current_photo -= 1;
-    renderPhoto();
-    return false;
-};
+	document.getElementById('next-button').onclick = function(){
+		if (window.current_photo >= window.photos.length - 1){
+			return false;
+		}
+	    window.current_photo += 1;
+	    renderPhoto();
+	    return false;
+	};
+}
 
-document.getElementById('next-button').onclick = function(){
-	if (window.current_photo >= window.photos.length - 1){
-		return false;
-	}
-    window.current_photo += 1;
-    renderPhoto();
-    return false;
-};
+function loadPhotos() {
+	var newElement = document.createElement("script");
+	newElement.setAttribute("src", "https://api.instagram.com/v1/tags/dream/media/recent?client_id=e77ecf67bd0443a4af523e63004712d5&callback=callbackFunction");
+	document.body.appendChild(newElement);
+}
 
+loadPhotos();
+prepareButtons();
