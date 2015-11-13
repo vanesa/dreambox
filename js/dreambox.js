@@ -52,10 +52,10 @@ function renderPhoto() {
 	var photo = photos[current_photo];
 
     var title = photo.caption.text;
-    // console.log(title);
+    
 	var title_div = document.getElementById('photo_title');
 
-    var blacklist = ["hot", "sex", "click here", "go here", "babes", "sexywoman"];
+    var blacklist = ["hot", "sex", "click here", "go here", "babes", "sexywoman", "slut", "whore", "fuck"];
     
     var blocked = false;
 
