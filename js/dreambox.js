@@ -1,6 +1,6 @@
 
 function callbackFunction(json) {
-	console.log(json.meta.code);
+	console.log(json);
 
 	if (json.meta.code == 200) {
 		window.photos = json.data;
@@ -48,7 +48,24 @@ function updateNav() {
 
 function renderPhoto() {
 	updateNav();
+	
 	var photo = photos[current_photo];
+
+    var title = photo.caption.text;
+    // console.log(title);
+	var title_div = document.getElementById('photo_title');
+
+    var blacklist = ["hot", "sex", "click here", "go here", "babes", "sexywoman"];
+    
+    var blocked = false;
+
+    for (var i = 0; i < blacklist.length - 1; i++) {
+    	var re = new RegExp('[^\\w]' + blacklist[i].toLowerCase() + '[^\\w]');
+    	if (re.exec(title.toLowerCase())) {
+    		// dont render this photo
+    		blocked = true;
+    	}
+    }
 
 	// Remove old fadein class
     var lightbox_img = document.getElementById('lightbox-img');
@@ -57,22 +74,21 @@ function renderPhoto() {
     }
     // Add new photo or video to DOM
     var lightbox = document.getElementById('lightbox');
-    var link = photo.link;
+    var link = 'href="' + photo.link + '" target="_blank"';
     var url = photo.type == "video" ? photo.videos.standard_resolution.url : photo.images.standard_resolution.url; // ternary operator
-	if (photo.type == "video") {
-	    lightbox.innerHTML = '<a href="' + link + '" target="_blank"><video id="lightbox-img" src="' + url + '" controls></video></a><div id="photo_title"></div>';
-	} else {
-	    lightbox.innerHTML = '<a href="' + link + '" target="_blank"><img id="lightbox-img" src="' + url + '" /></a><div id="photo_title"></div>';
+	if (blocked) {
+		url = "images/naughty.png";
+		link = "";
 	}
-
+	if (photo.type == "video") {
+	    lightbox.innerHTML = '<a ' + link + '><video id="lightbox-img" src="' + url + '" controls></video></a><div id="photo_title"></div>';
+	} else {
+	    lightbox.innerHTML = '<a ' + link + '><img id="lightbox-img" src="' + url + '" /></a><div id="photo_title"></div>';
+	}
 	// Update caption separately using textContent to prevent XSS (Cross Site Scripting)
-    var title_div = document.getElementById('photo_title');
-    var title = photo.caption.text;
-    title_div.textContent = title; 
-
-    // Fadein new photo or video
-    var lightbox_img = document.getElementById('lightbox-img');
-    lightbox_img.setAttribute('class', 'fadein');
+	var title_div = document.getElementById('photo_title');
+    title_div.textContent = title;
+		
 };
 
 function prepareButtons() {
@@ -95,11 +111,11 @@ function prepareButtons() {
 	};
 }
 
-function loadPhotos() {
-	var newElement = document.createElement("script");
-	newElement.setAttribute("src", "https://api.instagram.com/v1/tags/dream/media/recent?client_id=e77ecf67bd0443a4af523e63004712d5&callback=callbackFunction");
-	document.body.appendChild(newElement);
-}
+// function loadPhotos() {
+// 	var newElement = document.createElement("script");
+// 	newElement.setAttribute("src", "https://api.instagram.com/v1/tags/dream/media/recent?client_id=e77ecf67bd0443a4af523e63004712d5&callback=callbackFunction");
+// 	document.body.appendChild(newElement);
+// }
 
-loadPhotos();
+// loadPhotos();
 prepareButtons();
